@@ -1,12 +1,14 @@
+// modules
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+// routing
 import { TabsPageRoutingModule } from './tabs-routing.module';
 
+// components
 import { TabsPage } from './tabs.page';
-
 @NgModule({
   imports: [
     IonicModule,
@@ -14,6 +16,8 @@ import { TabsPage } from './tabs.page';
     FormsModule,
     TabsPageRoutingModule
   ],
-  declarations: [TabsPage]
+  declarations: [
+    TabsPage
+  ]
 })
 export class TabsPageModule {}

@@ -1,0 +1,17 @@
+<app-header></app-header>
+
+<ion-content>
+  <app-slider-first></app-slider-first>
+  <app-sub-categories></app-sub-categories>
+
+  <div *ngFor="let product of products">
+    <div class="header-prod">
+      <ion-title>Restaurantes</ion-title>
+    </div>
+    <ion-slides [options]="slideOpts">
+      <ion-slide>
+        <app-card-tiendas [product]="product"></app-card-tiendas>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>

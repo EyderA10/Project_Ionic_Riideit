@@ -1,0 +1,22 @@
+<app-header></app-header>
+<ion-content>
+  <div *ngFor="let product of products">
+    <div class="div-header-tiendas">
+      <ion-icon name="bag"></ion-icon>
+      <img class="img-tienda-exp"
+        src="https://www.tapuntu.eus/wp-content/uploads/2018/04/logotipo_diseinu_joera_lettering.png"
+        alt="img-tienda">
+      <span class="calific-star">
+        <ion-title size="small">Gourmet Kitchen</ion-title>
+        <ion-icon name="star"></ion-icon>
+        <ion-label>5</ion-label>
+      </span>
+    </div>
+    <ion-slides [options]="slideOpts">
+      <ion-slide>
+        <app-card-products [product]="product"></app-card-products>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+</ion-content>

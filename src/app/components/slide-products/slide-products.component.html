@@ -1,0 +1,11 @@
+<div class="header-prod">
+  <ion-icon name="flame"></ion-icon>
+  <ion-label>{{tienda}}</ion-label>
+</div>
+
+<ion-slides [options]="slideOpts">
+  <ion-slide *ngFor="let product of products">
+    <app-card-products [product]="product"></app-card-products>
+  </ion-slide>
+
+</ion-slides>

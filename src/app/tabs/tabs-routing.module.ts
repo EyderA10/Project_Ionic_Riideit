@@ -4,31 +4,39 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'lo-mas-hot',
+        loadChildren: () => import('../pages/home/home.module').then(m => m.HomePageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'categorias',
+        loadChildren: () => import('../pages/categorias/categorias.module').then( m => m.CategoriasPageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'promociones',
+        loadChildren: () => import('../pages/promociones/promociones.module').then( m => m.PromocionesPageModule)
+      },
+      {
+        path: 'categoria/:id',
+        loadChildren: () => import('../pages/categoria-detail/categoria-detail.module').then( m => m.CategoriaDetailPageModule)
+      },
+      {
+        path: 'tienda/:id',
+        loadChildren: () => import('../pages/tienda-detail/tienda-detail.module').then( m => m.TiendaDetailPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/lo-mas-hot',
         pathMatch: 'full'
       }
     ]
   },
   {
-    path: '',
-    redirectTo: '/tabs/tab1',
+    path: '**',
+    redirectTo: '/lo-mas-hot',
     pathMatch: 'full'
   }
 ];
@@ -36,4 +44,4 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

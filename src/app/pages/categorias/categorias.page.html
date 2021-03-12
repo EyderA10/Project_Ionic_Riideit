@@ -1,0 +1,21 @@
+<app-header></app-header>
+
+<ion-content>
+  <app-slider-first></app-slider-first>
+
+  <div class="div-text">
+    <ion-title>¿Que vas a comer Hoy?</ion-title>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let categoria of catgorias">
+        <app-card-categories [categoria]="categoria"></app-card-categories>
+        <div class="num-tiendas">
+          <ion-label>1 Tiendas</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
